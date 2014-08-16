@@ -1,4 +1,5 @@
 import re
+import os
 
 sections = ['Chain complexes',
 'LES in homology',
@@ -21,30 +22,49 @@ sections = ['Chain complexes',
 ]
 
 
-# https://github.com/jpvanhal/inflection/blob/master/inflection.py
-def camelize(string, uppercase_first_letter=True, separator=' '):
+def make_template(name):
+    """
+    generate tex file name/name.tex using
+    activity_template for tex code
+    """
+    activityName = camelize(name)
+    os.system('mkdir -p ' + activityName)
+    activityPath = activityName + '/' + activityName
+    activityTex = activityPath + '.tex'
+    print activityPath
+    if not os.path.exists(activityTex):
+        activityFile = open(activityTex,'w')
+        activityFile.write(activity_template(name))
+        activityFile.close()
+    else:
+        pass
+        #print "tex file exists: " + activityTex
+
+def activity_template(name):
+    """
+    generate the tex code for activity
+    """
+    return r'''{\documentclass{ximera}
+\title{''' + name  + r'''}
+\begin{document}
+\begin{abstract}
+% summary goes here
+
+\end{abstract}
+\maketitle
+
+% content goes here
+
+\end{document}
+'''
+
+def camelize(string, uppercase_first_letter=False, separator=' '):
     """
     Convert strings to CamelCase.
 
-    Examples::
-
-        >>> camelize("device_type")
-        "DeviceType"
-        >>> camelize("device_type", False)
-        "deviceType"
-
-    :func:`camelize` can be though as a inverse of :func:`underscore`, although
-    there are some cases where that does not hold::
-
-        >>> camelize(underscore("IOError"))
-        "IoError"
-
-    :param uppercase_first_letter: if set to `True` :func:`camelize` converts
-        strings to UpperCamelCase. If set to `False` :func:`camelize` produces
-        lowerCamelCase. Defaults to `True`.
+    https://github.com/jpvanhal/inflection/blob/master/inflection.py
     """
-    regexpr = r"(?:^|" + separator + r")(.)"
-    if uppercase_first_letter:
-        return re.sub(regexpr, lambda m: m.group(1).upper(), string)
-    else:
-        return string[0].lower() + camelize(string)[1:]
+    s1 = re.sub('[^\s\w]','',string)
+    words = s1.split(separator)
+    camelWords = [words[0].lower()] + [w.capitalize() for w in words[1:]]
+    return ''.join(camelWords)
