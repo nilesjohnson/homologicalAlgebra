@@ -1,3 +1,6 @@
+"""
+Generate activity tex files from section names.
+"""
 import re
 import os
 
@@ -25,7 +28,7 @@ sections = ['Chain complexes',
 def make_template(name):
     """
     generate tex file name/name.tex using
-    activity_template for tex code
+    activity_boilerplate for tex code
     """
     activityName = camelize(name)
     os.system('mkdir -p ' + activityName)
@@ -34,13 +37,13 @@ def make_template(name):
     print activityPath
     if not os.path.exists(activityTex):
         activityFile = open(activityTex,'w')
-        activityFile.write(activity_template(name))
+        activityFile.write(activity_boilerplate(name))
         activityFile.close()
     else:
         pass
         #print "tex file exists: " + activityTex
 
-def activity_template(name):
+def activity_boilerplate(name):
     """
     generate the tex code for activity
     """
@@ -60,11 +63,12 @@ def activity_template(name):
 
 def camelize(string, uppercase_first_letter=False, separator=' '):
     """
-    Convert strings to CamelCase.
+    Convert strings to camelBackCase.
 
+    Based on
     https://github.com/jpvanhal/inflection/blob/master/inflection.py
     """
-    s1 = re.sub('[^\s\w]','',string)
+    s1 = re.sub('[^\s\w]','',string) #strip nonspace, nonword characters
     words = s1.split(separator)
     camelWords = [words[0].lower()] + [w.capitalize() for w in words[1:]]
     return ''.join(camelWords)
