@@ -2,11 +2,44 @@
 \title{Chain complexes}
 \begin{document}
 \begin{abstract}
-% summary goes here
-
+  Definition and basic properties
 \end{abstract}
 \maketitle
 
-% content goes here
+Throughout, we work over a commutative ring $R$.
+
+\begin{definition}[Chain complex]
+  $d^2 = 0$.
+\end{definition}
+
+\begin{definition}[Cycles]
+  $Z_n = ker(d_n)$
+\end{definition}
+
+\begin{definition}[Boundaries]
+  $B_n = im(d_{n+1})$
+\end{definition}
+
+Note: $d^2 = 0$ implies that $B_n \subset Z_n$
+
+[Pause for effect]
+
+\begin{definition}[Homology]
+  $H_n = Z_n/B_n$ 
+\end{definition}
+
+\begin{example}
+  $C_n = \mathbb{Z}/8$, $d_n = $[multiplication by 4.]
+\end{example}
+
+\subsection{The category of chain complexes}
+
+Objects are chain complexes, morphisms are level-wise maps that
+commute with the differential.
+\[
+[diagram\ here]
+\]
+
+\subsection{$Ch(R)$ is an abelian category}
 
 \end{document}

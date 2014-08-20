@@ -2,11 +2,43 @@
 \title{Resolutions}
 \begin{document}
 \begin{abstract}
-% summary goes here
-
+  Replace a chain complex with an equivalent one that is better-behaved.
 \end{abstract}
 \maketitle
 
-% content goes here
+\subsection{Motivation}
+
+There are pathologies in the category of chain complexes.  For
+example, $Hom_{\mathbb{Z}}(C, \mathbb{Z})$ could have nontrivial
+homology even if $C$ has trivial homology!  Same problem, e.g., for $-
+\otimes \mathbb{Z}/p$.
+
+This means that a category of chain complexes modulo weak equivalence
+wouldn't have well-defined hom objects or tensor products.
+
+This kind of problem occurs for topological spaces too:  The Warsaw
+circle, $W$, has trivial homotopy groups, but the mapping space from
+$W$ to the circle has nontrivial homotopy!
+\[
+[picture]
+\]
+
+\subsection{Solution for spaces}
+
+In spaces, the CW complexes form a well-behaved subcategory, and every
+space is weakly equivalent to a CW complex.  So one could ``restrict''
+to CW complexes.  We still do want to consider all spaces, so develop
+a system for coherently replacing any space with a CW complex . . .
+
+The analogous solution in chain complexes comes in the form of
+resolutions!  This can be done in two different (dual) ways . . .
+
+\subsection{Projective resolutions}
+
+
+
+\subsection{Injective resolutions}
+
+
 
 \end{document}
