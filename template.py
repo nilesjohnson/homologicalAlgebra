@@ -43,11 +43,15 @@ def make_template(name):
         pass
         #print "tex file exists: " + activityTex
 
+def make_many(names):
+    for name in names:
+        make_template(name)
+
 def activity_boilerplate(name):
     """
     generate the tex code for activity
     """
-    return r'''{\documentclass{ximera}
+    return r'''\documentclass{ximera}
 \title{''' + name  + r'''}
 \begin{document}
 \begin{abstract}
