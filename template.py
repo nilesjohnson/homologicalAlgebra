@@ -24,6 +24,25 @@ sections = ['Chain complexes',
 'Local cohomology'
 ]
 
+sections2 = ['Spectral sequences: introduction',
+'Spectral sequences: Basic examples',
+'Spectral sequences: Convergence terminology',
+'Spectral sequences: More examples',
+'Spectral sequences: Construction from a filtered chain complex',
+'Spectral sequences: Nontrivial coefficients',
+'Interlude: Sylow subgroups of symmetric groups',
+'Interlude: The bar resolugion',
+'Spectral sequences: More examples',
+'Lie algebras',
+'\mathfrak{g}-modules',
+'Universal enveloping algebras',
+'Introduction to simplicial methods',
+'Simplicial homotopy',
+'Dold-Kan',
+'André-Quillen Co/Homology',
+'Hochschild Co/Homology'
+]
+
 
 def make_template(name):
     """
