@@ -2,11 +2,37 @@
 \title{Homological dimension}
 \begin{document}
 \begin{abstract}
-% summary goes here
-
+  Dimension is determined by length of a minimal resolution
 \end{abstract}
 \maketitle
 
-% content goes here
+\begin{definition}
+  \ 
+  \begin{itemize}
+  \item Projective dimension
+  \item Injective dimension
+  \item Flat dimension
+  \end{itemize}
+\end{definition}
+
+\begin{theorem}[Homological dimension]
+  Let $R$ be a commutative ring, the following are equivalent:
+  \begin{enumerate}
+  \item $sup_{B}$ \{ inj.dim($B$), $B$ an $R$-module \}
+  \item $sup_{A}$ \{proj.dim($A$), $A$ an $R$-module \}
+  \item $sup_{I}$ \{proj.dim($R/I$), $I$ an ideal \}
+  \item $sup$ \{ $d$ such that $Ext^d_R(A,B) \not= 0$ for some $A$, $B$ \}
+  \end{enumerate}
+\end{theorem}
+
+\begin{example}
+  \ 
+  \begin{itemize}
+  \item Every field has homological dimension 0.
+  \item $R = \mathbb{Z}$ has homological dimension 1.
+  \item $R = \mathbb{Z}/m$ with $p^2 | m$ has homological dimension
+    $\infty$ (consider $Ext_{\mathbb{Z}/p^2}(\mathbb{Z}/p, \mathbb{Z}/p)$).
+  \end{itemize}
+\end{example}
 
 \end{document}

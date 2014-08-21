@@ -2,11 +2,34 @@
 \title{Universal coefficient theorem}
 \begin{document}
 \begin{abstract}
-% summary goes here
-
+  
 \end{abstract}
 \maketitle
 
-% content goes here
+\begin{theorem}
+  Let $P$ be a flat complex with each $d(P_n)$ flat.  Then for all
+  $R$-modules $M$ we have a short exact sequence
+  \[
+  0 \rightarrow H_n(P) \otimes M 
+  \rightarrow H_n(P \otimes M)
+  \rightarrow Tor_1(H_{n-1}(P), M) \rightarrow 0
+  \]
+\end{theorem}
+\begin{proof}
+  [...]
+\end{proof}
+
+\begin{theorem}
+  Let $P$ be a flat complex with each $d(P_n)$ flat and let $Q$ be any
+  chain complex.  Then we have a short exact sequence
+  \[
+  0 \rightarrow (H_*(P) \otimes H_*(Q))_n 
+  \rightarrow H_n(P \otimes Q)
+  \rightarrow \bigoplus_{p+q = n-1}Tor_1(H_{p}(P), H_q(Q)) \rightarrow 0
+  \]
+\end{theorem}
+\begin{proof}
+  Same idea as above.
+\end{proof}
 
 \end{document}
