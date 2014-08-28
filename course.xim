@@ -4,7 +4,6 @@ description: Notes from an introductory course on homological algebra
 ---
 
 test/test
-introduction/introduction
 chainComplexes/chainComplexes
 lesInHomology/lesInHomology
 chainHomotopy/chainHomotopy
