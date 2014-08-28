@@ -1,3 +1,5 @@
+#!/usr/bin/python
+# -*- coding: iso-8859-15 -*-
 """
 Generate activity tex files from section names.
 """
@@ -34,12 +36,10 @@ sections2 = ['Spectral sequences: introduction',
 'Interlude: The bar resolugion',
 'Spectral sequences: More examples',
 'Lie algebras',
-'\mathfrak{g}-modules',
 'Universal enveloping algebras',
 'Introduction to simplicial methods',
 'Simplicial homotopy',
-'Dold-Kan',
-'André-Quillen Co/Homology',
+'Dold-Kan Correspondence',
 'Hochschild Co/Homology'
 ]
 
@@ -91,7 +91,8 @@ def camelize(string, uppercase_first_letter=False, separator=' '):
     Based on
     https://github.com/jpvanhal/inflection/blob/master/inflection.py
     """
-    s1 = re.sub('[^\s\w]','',string) #strip nonspace, nonword characters
+    s0 = re.sub('[-/]',separator,string) #convert dashes and slashes to separator
+    s1 = re.sub('[^\s\w]','',s0) #strip nonspace, nonword characters
     words = s1.split(separator)
     camelWords = [words[0].lower()] + [w.capitalize() for w in words[1:]]
     return ''.join(camelWords)
