@@ -2,11 +2,60 @@
 \title{Spectral sequences: Convergence terminology}
 \begin{document}
 \begin{abstract}
-% summary goes here
-
+  Bounded, convergent, abutment
 \end{abstract}
 \maketitle
 
-% content goes here
+\begin{note}
+  This is the terminology of Weibel, and may be slightly out of date . . .
+\end{note}
+
+\begin{definition}[Spectral sequence]
+  A homological spectral sequence over a commutative ring $R$ consists of
+  \begin{enumerate}
+  \item $R$-modules $\{E^r_{p,q}\}$ $p,q \in \mathbb{Z}$ and $r \ge a$ (usually $a = 1$ or $a = 2$).
+  \item Differentials $d^r_{p,q}: E^r_{p,q} \to E^r_{p-r, q + r - 1}$
+  \item Each page is the homology of the previous (for $r \ge a$):
+    \[
+    E^{r+1}_{p,q} = \frac{ker\left( E^r_{p,q} \xrightarrow{d^r} E^r_{p-r,q+r - 1} \right)}{im\left( E^r_{p+r,q-r+1} \xrightarrow{d^r} E^r_{p,q} \right)}
+    \]
+  \end{enumerate}
+\end{definition}
+
+\begin{note}
+  A cohomological spectral sequence is written ...
+\end{note}
+
+\begin{definition}
+  A \emph{first quadrant} spectral sequence has $E^r_{p,q} = 0$ for $p
+  < 0$ or $q < 0$.
+\end{definition}
+
+If $E$ is a first-quadrant spectral sequence, then for fixed $(p,q)$
+there is $r$ sufficiently large such that $E^r_{p,q} = E^{r+1}_{p,q} =
+\cdots =: E^\infty_{p,q}$.
+
+\begin{definition}
+  A spectral sequence is \emph{bounded} if, for all $n$, only finitely
+  many $E^r_{p,q} \not = 0$ for $p + q = n$.
+\end{definition}
+
+\begin{definition}
+  A bounded spectral sequence $E$ \emph{converges} to a graded
+  $R$-module $H_*$ if each $H_n$ has a finite filtration: For some $s,t \in \mathbb{Z}$, 
+  \[
+  0 = F_sH_n \subset F_{s+1}H_n \subset \cdots \subset F_{t-1}H_n \subset F_t H_n = H_n
+  \]
+  and
+  \[
+  E^{\infty}_{p,q} \cong F_pH_{p+q}/F_{p-1}H_{p+q}.
+  \]
+  
+  In this case, we write
+  \[
+  E^a_{p,q} \Rightarrow H_{p+q}.
+  \]
+\end{definition}
+
 
 \end{document}

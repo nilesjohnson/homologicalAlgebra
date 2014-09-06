@@ -2,11 +2,53 @@
 \title{Spectral sequences: introduction}
 \begin{document}
 \begin{abstract}
-% summary goes here
-
+  Filtration on a chain complex leads to filtration on its homology.
 \end{abstract}
 \maketitle
 
-% content goes here
+\section{Rough idea}
+
+We will be interested in a (first-quadrant) double-complex $E_{*,*}$
+and the homology of its associated total complex $T_* = \bigoplus_{p +
+  q = *} E_{p,q}$.
+
+(Double complex means there are ``vertical'' and ``horizontal'' differentials $d^v$ and $d^h$ with the skew-commuting relation $d^h d^v + d^v d^h = 0$.)
+
+\begin{image}
+  (insert picture of first-quadrant double complex)
+\end{image}
+
+\begin{enumerate}
+\item Let $E^0_{p,q}$ be the sequence of vertical complexes $(E_{p,*},d^v)$ for each $p$.
+\item Let $E^1_{p,q} = H_q(E^0_{p,*}, d^v)$.  Then $d^h$ induces
+  \[
+  d^1: E^1_{p,q} \rightarrow E^1_{p-1,q}.
+  \]
+\item Let $E^2_{p,q} = H_p(E^1_{*,q}, d^1)$.
+\item There is an induced differential on $E^2$ of bidegree $(-2,1)$,
+  and it's homology gives a bigraded complex $E^3$.
+\item Each $E^r$ is the $r-th$ page of the spectral sequence, and it's
+  homology gives the $(r+1)-st$ page.
+\item Successive pages give successive approximations to the homology
+  of the total complex $T$.
+\end{enumerate}
+
+
+We discuss spectral sequences arising from filtered chain complexes.
+This is not the most general point of view, but is broadly applicable
+and reasonably natural.
+
+\section{Special case}
+
+If $E$ is concentrated in just two adjacent columns, $p-1$ and $p$,
+there is a short exact sequence
+\[
+0 \rightarrow E^2_{p-1,q+1} \rightarrow H_{p+q} \rightarrow E^2_{p,q} \rightarrow 0.
+\]
+
+
+\begin{note}
+It can be easier to draw spectral sequences using Adams grading . . .
+\end{note}
 
 \end{document}
