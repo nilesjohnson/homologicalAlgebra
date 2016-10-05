@@ -1,4 +1,4 @@
-\documentclass{ximera}
+\documentclass[nooutcomes]{ximera}
 \title{Chain homotopy}
 \begin{document}
 \begin{abstract}
@@ -6,7 +6,37 @@
 \end{abstract}
 \maketitle
 
-Define an interval object and use it to define a notion of chain
-homotopy.  Show that this agrees with other definitions.
+The notion of chain homotopy can be explained by an "interval" chain
+complex, I, and map
+
+\[
+M \otimes I \to N
+\]
+
+Suppose $R$ is the ground ring.  The chain complex $I$ is nontrivial in two degrees:
+
+\begin{align*}
+I_0 & = R \oplus R\\
+I_1 & = R
+\end{align*}
+
+Suppose the two generators for $I_0$ are $a$ and $b$, and suppose the
+generator for $I_1$ is $c$.  Then the differential is given by
+
+\[
+d(c) = b - a.
+\]
+
+It's a fun exercise to check that the usual definition of chain
+homotopy equivalence is the same as the one determined by a map out of
+$M \otimes I$.  (The part that shifts degree by 1 is the part coming
+from $I_1$).
+
+In fact, this $I$ is the chain complex you would get from the cellular
+chains on the standard interval $I$, so from that point of view it's
+not so surprising that it plays such a crucial role.
+
+
+
 
 \end{document}

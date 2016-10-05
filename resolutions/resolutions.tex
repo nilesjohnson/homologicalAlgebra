@@ -1,10 +1,70 @@
-\documentclass{ximera}
+\documentclass[nooutcomes]{ximera}
 \title{Resolutions}
 \begin{document}
 \begin{abstract}
   Replace a chain complex with an equivalent one that is better-behaved.
 \end{abstract}
 \maketitle
+
+
+
+\subsection{email to Brian Boe}
+
+We often introduce Ext and Tor by observing that Hom and Tensor don't preserve exact sequences.  But why should that be something we regard as "broken" and which we need to "fix"?  And why on Earth should resolutions be the fix?!
+
+The fact that Hom/Tensor don't preserve exact sequences is equivalent to the fact that they are not homology-invariant.  It can happen that we have two chain complexes $M$ and $M'$, with a homology isomorphism
+
+\[
+M \to M'
+\]
+
+but for other chain complexes $N$, the induced map
+
+\[
+Hom(M',N) \to Hom(M,N)
+\]
+
+is \emph{not} a homology isomorphism.  In particular, $M'$ could have trivial homology, but $Hom(M',N)$ might not.
+
+The failure of $Hom$ to preserve homology isomorphisms means that one cannot naively construct a well-defined category where the homology isomorphisms are actual isomorphisms (one would have isomorphic objects, but the morphisms out of them would not be isomorphic -- this is a contradiciton).  The derived category accomplishes this, and the goal is to motivate this from the perspective of wanting to study homology isomorphisms.
+
+The same problem happens in topology: For example, the Warsaw Circle,
+$W$, has trivial homotopy groups, but $Hom(W, S^1)$ has non-trivial
+homotopy groups (it's $\pi_0$ is the integers, just like $Hom(S^1,
+S^1)$).  In topology, this problem is resolved by replacing a space by
+a CW complex.  This problem of $X \to X'$ being a homotopy isomorphism (that is, isomorphism on homotopy groups) but $Hom(X',Y) \to Hom(X,Y)$ not being a homotopy isomorphism \emph{never} happens when $X$ and $X'$ are CW complexes (that's the Whitehead theorem, and it's all the topology you need to know for this).
+
+In homological algebra, the analog of a CW complex is a levelwise
+projective complex.  A projective resolution $P$ of a module $M$ is
+precisely a levelwise projective complex with a homology isomorphism
+$P \to M$.
+
+The analog of Whitehead's theorem for chain complexes is the result
+that a homology isomorphism between levelwise projective complexes has
+a chain-homotopy inverse.  I think it's usually not named, but it's
+the technical result necessary to prove that Ext does not depend on
+the choice of projective resolution.
+
+
+Back to spaces for a minute: every topological space is
+homotopy-isomorphic to a CW complex, so one can take the subcategory
+consisting only of CW complexes, and obtain a well-defined category
+from this by inverting the weak equivalences -- indeed, because the
+homotopy-isomorphisms in this subcategory are homotopy equivalences,
+the 'derived' category can be formed by simply taking homotopy
+equivalence classes of maps.  This produces a well-defined category
+where the homotopy-isomorphisms are actually isomorphisms.
+Constructions such as "the" homotopy fiber of an arbitrary map can be
+understood in categorical terms here, simplifying arguments which
+would normally involve a complicated mess of homotopies to check.
+
+The derived category of a ring has the same advantage!  There is one
+slight additional subtlety for homological algebra though: the notion
+of \emph{injectivity}.  Spaces don't have this subtlety...
+
+
+
+
 
 \subsection{Motivation}
 
@@ -22,6 +82,11 @@ $W$ to the circle has nontrivial homotopy!
 \[
 [picture]
 \]
+
+
+
+
+
 
 \subsection{Solution for spaces}
 
